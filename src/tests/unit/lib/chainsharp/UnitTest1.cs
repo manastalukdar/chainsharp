@@ -1,4 +1,5 @@
 using System;
+using main.lib.chainsharp;
 using Xunit;
 
 namespace tests.unit.lib.chainsharp
@@ -8,6 +9,13 @@ namespace tests.unit.lib.chainsharp
         [Fact]
         public void Test1()
         {
+            //=====Arrange=====
+            Class1 class1 = new Class1();
+
+            //=====Act=====
+            class1.dummy();
+
+            //=====Assert=====
         }
     }
 }
