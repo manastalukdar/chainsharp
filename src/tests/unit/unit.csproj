@@ -13,4 +13,9 @@
     <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\main\lib\datastructure\bplustree\bplustree.csproj" />
+    <ProjectReference Include="..\..\main\lib\chainsharp\chainsharp.csproj" />
+  </ItemGroup>
+
 </Project>
