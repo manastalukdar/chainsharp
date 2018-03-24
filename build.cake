@@ -81,7 +81,7 @@ Task("Calculate-Coverage")
         Information("Running on Unix");
         return;
     }
-    
+
     var projects = GetFiles("../src/main/**/*.csproj");
     foreach(var project in projects)
     {
@@ -125,6 +125,12 @@ Task("Generate-Report")
     .IsDependentOn("Calculate-Coverage")
     .Does(() =>
 {
+    if (IsRunningOnUnix())
+    {
+        Information("Running on Unix");
+        return;
+    }
+
     ReportGenerator(codeCoverageFile, codeCoverageDirectory);
 });
 
@@ -132,7 +138,12 @@ Task("Upload-Coverage")
     .IsDependentOn("Generate-Report")
     .Does(() =>
 {
-    // Upload a coverage report.
+    if (IsRunningOnUnix())
+    {
+        Information("Running on Unix");
+        return;
+    }
+    
     Codecov(codeCoverageFile.ToString());
 });
 
