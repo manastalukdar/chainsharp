@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="../chainsharp/chainsharp.csproj" />
+    <ProjectReference Include="../lib/chainsharp/chainsharp.csproj" />
   </ItemGroup>
 
 </Project>
