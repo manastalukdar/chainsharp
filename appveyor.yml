@@ -1,0 +1,21 @@
+version: 1.0.{build}
+
+branches:
+  except:
+  - gh-pages
+
+skip_tags: true
+
+image:
+- Visual Studio 2017
+
+install:
+
+build_script:
+  - ps: .\build.ps1
+
+test: off
+
+test_script:
+
+after_test:
