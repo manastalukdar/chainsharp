@@ -76,6 +76,12 @@ Task("Calculate-Coverage")
     .IsDependentOn("Run-Unit-Tests")
     .Does(() =>
 {
+    if (IsRunningOnUnix())
+    {
+        Information("Running on Unix");
+        return;
+    }
+    
     var projects = GetFiles("../src/main/**/*.csproj");
     foreach(var project in projects)
     {
