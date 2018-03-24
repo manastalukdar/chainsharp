@@ -16,9 +16,3 @@ install:
 build_script:
   - ps: .\build.ps1
   - sh: ./build.sh
-
-test: off
-
-test_script: off
-
-after_test: off
