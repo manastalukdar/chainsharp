@@ -78,7 +78,7 @@ Task("Calculate-Coverage")
 {
     if (IsRunningOnUnix())
     {
-        Information("Running on Unix");
+        Information("Running on Unix. Skipping task.");
         return;
     }
 
@@ -127,7 +127,7 @@ Task("Generate-Report")
 {
     if (IsRunningOnUnix())
     {
-        Information("Running on Unix");
+        Information("Running on Unix. Skipping task.");
         return;
     }
 
@@ -140,10 +140,10 @@ Task("Upload-Coverage")
 {
     if (IsRunningOnUnix())
     {
-        Information("Running on Unix");
+        Information("Running on Unix. Skipping task.");
         return;
     }
-    
+
     Codecov(codeCoverageFile.ToString());
 });
 
