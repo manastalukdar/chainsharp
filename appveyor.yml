@@ -8,11 +8,13 @@ skip_tags: true
 
 image:
 - Visual Studio 2017
+- Ubuntu
 
 install:
 
 build_script:
   - ps: .\build.ps1
+  - pwsh: ./build.ps1
 
 test: off
 
