@@ -1,7 +1,7 @@
 using System;
 using Xunit;
 
-namespace tests.lib.data-structure.bplustree
+namespace tests.lib.datastructure.bplustree
 {
     public class UnitTest1
     {

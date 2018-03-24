@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace lib.data-structure.bplustree
+namespace main.lib.datastructure.bplustree
 {
     public class Class1
     {

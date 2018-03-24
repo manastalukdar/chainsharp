@@ -1,7 +1,7 @@
 ﻿using System;
-using lib.chainsharp;
+using main.lib.chainsharp;
 
-namespace chainsharp.app
+namespace main.chainsharp.app
 {
     class Program
     {

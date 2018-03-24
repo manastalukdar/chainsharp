@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace lib.chainsharp
+namespace main.lib.chainsharp
 {
     public class Class1
     {
