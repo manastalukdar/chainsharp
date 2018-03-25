@@ -2,7 +2,6 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-    <DebugType>full</DebugType>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
@@ -14,8 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\main\lib\chainsharp\chainsharp.lib.csproj" />
-    <ProjectReference Include="..\..\main\lib\datastructure\bplustree\chainsharp.datastructure.bplustree.csproj" />
+    <ProjectReference Include="..\..\main\chainsharp.datastructure.bplustree\chainsharp.datastructure.bplustree.csproj" />
+    <ProjectReference Include="..\..\main\chainsharp.lib\chainsharp.lib.csproj" />
   </ItemGroup>
 
 </Project>

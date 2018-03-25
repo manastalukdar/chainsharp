@@ -54,6 +54,8 @@ Task("Build")
     var path = MakeAbsolute(new DirectoryPath("chainsharp.sln"));
     DotNetCoreBuild(path.FullPath, new DotNetCoreBuildSettings()
     {
+        ArgumentCustomization = args => args
+            .Append("-p:DebugType=Full"),
         NoRestore = true
     });
 });

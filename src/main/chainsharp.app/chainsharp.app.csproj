@@ -3,11 +3,10 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-    <DebugType>full</DebugType>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\lib\chainsharp\chainsharp.lib.csproj" />
+    <ProjectReference Include="..\chainsharp.lib\chainsharp.lib.csproj" />
   </ItemGroup>
 
 </Project>

@@ -13,8 +13,7 @@
             "group": "build",
             "presentation": {
                 "reveal": "silent"
-            },
-            "problemMatcher": "$msCompile"
+            }
         },
         {
             "label": "dotnet-restore",
@@ -26,8 +25,7 @@
             "group": "build",
             "presentation": {
                 "reveal": "silent"
-            },
-            "problemMatcher": "$msCompile"
+            }
         },
         {
             "label": "dotnet-build",
