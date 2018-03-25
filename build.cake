@@ -17,6 +17,7 @@
 var artifactsDirectory = MakeAbsolute(Directory("./artifacts"));
 var codeCoverageDirectory = MakeAbsolute(Directory("./artifacts/codecoverage"));
 var codeCoverageFile = codeCoverageDirectory.CombineWithFilePath("coverage.xml");
+var solutionPath = MakeAbsolute(new DirectoryPath("chainsharp.sln"));
 
 //////////////////////////////////////////////////////////////////////
 // TASKS
@@ -27,8 +28,7 @@ Task("Clean")
     {
         CleanDirectory(artifactsDirectory);
         CreateDirectory(codeCoverageDirectory);
-        var path = MakeAbsolute(new DirectoryPath("chainsharp.sln"));
-        DotNetCoreClean(path.FullPath);
+        DotNetCoreClean(solutionPath.FullPath);
     });
     
 
@@ -51,8 +51,7 @@ Task("Build")
     .Does(() =>
 {
     // Build the solution.
-    var path = MakeAbsolute(new DirectoryPath("chainsharp.sln"));
-    DotNetCoreBuild(path.FullPath, new DotNetCoreBuildSettings()
+    DotNetCoreBuild(solutionPath.FullPath, new DotNetCoreBuildSettings()
     {
         ArgumentCustomization = args => args
             .Append("-p:DebugType=Full"),
@@ -67,11 +66,14 @@ Task("Run-Unit-Tests")
     var projects = GetFiles("./src/**/tests/**/*.csproj");
     foreach(var project in projects)
     {
+        var filePath = new FilePath(solutionPath.FullPath);
+        Information(filePath.GetDirectory());
         DotNetCoreTest(project.ToString(), new DotNetCoreTestSettings
         {
             Framework = "netcoreapp2.0",
             NoBuild = true,
-            NoRestore = true
+            NoRestore = true,
+            WorkingDirectory = filePath.GetDirectory()
         });
     }
 });
