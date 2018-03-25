@@ -292,4 +292,4 @@ __pycache__/
 
 .vscode/solution-explorer
 tools
-!src/main/chainsharp.lib/
+!src/**/chainsharp.lib/

@@ -67,7 +67,6 @@ Task("Run-Unit-Tests")
     foreach(var project in projects)
     {
         var filePath = new FilePath(solutionPath.FullPath);
-        Information(filePath.GetDirectory());
         DotNetCoreTest(project.ToString(), new DotNetCoreTestSettings
         {
             Framework = "netcoreapp2.0",
