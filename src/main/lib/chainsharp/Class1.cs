@@ -4,9 +4,9 @@ namespace main.lib.chainsharp
 {
     public class Class1
     {
-        public void dummy() 
+        public static string dummy() 
         {
-            Console.WriteLine("Alive");
+            return Environment.CurrentDirectory;
         }
     }
 }

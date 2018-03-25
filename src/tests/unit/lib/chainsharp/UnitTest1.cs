@@ -7,15 +7,16 @@ namespace tests.unit.lib.chainsharp
     public class UnitTest1
     {
         [Fact]
-        public void Test1()
+        public static void Test1()
         {
             //=====Arrange=====
-            Class1 class1 = new Class1();
 
             //=====Act=====
-            class1.dummy();
+            var cwd = Class1.dummy();
+            var cwdThis = Environment.CurrentDirectory;
 
             //=====Assert=====
+            Assert.Equal(cwd, cwdThis);
         }
     }
 }

@@ -8,6 +8,7 @@ namespace tests.unit.lib.datastructure.bplustree
         [Fact]
         public void Test1()
         {
+            // Do nothing because nothing to do.
         }
     }
 }

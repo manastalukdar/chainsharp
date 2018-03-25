@@ -4,10 +4,10 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build",
-            "command": "dotnet build",
+            "label": "dotnet-clean",
+            "command": "dotnet clean",
             "options": {
-                "cwd": "${workspaceFolder}/src/chainsharp.app"
+                "cwd": "${workspaceFolder}"
             },
             "type": "shell",
             "group": "build",
@@ -15,6 +15,44 @@
                 "reveal": "silent"
             },
             "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "dotnet-restore",
+            "command": "dotnet restore",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "type": "shell",
+            "group": "build",
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "dotnet-build",
+            "command": "dotnet build",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "type": "shell",
+            "group": "build",
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "dotnet-test",
+            "command": "dotnet test",
+            "options": {
+                "cwd": "${workspaceFolder}/src/tests/unit"
+            },
+            "type": "shell",
+            "group": "build",
+            "presentation": {
+                "reveal": "silent"
+            }
         }
     ]
 }
