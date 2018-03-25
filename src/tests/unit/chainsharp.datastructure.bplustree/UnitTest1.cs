@@ -1,7 +1,7 @@
 using System;
 using Xunit;
 
-namespace tests.unit.lib.datastructure.bplustree
+namespace chainsharp.tests.unit.chainsharp.datastructure.bplustree
 {
     public class UnitTest1
     {

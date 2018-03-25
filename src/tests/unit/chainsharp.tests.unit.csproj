@@ -14,8 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\main\lib\datastructure\bplustree\bplustree.csproj" />
-    <ProjectReference Include="..\..\main\lib\chainsharp\chainsharp.csproj" />
+    <ProjectReference Include="..\..\main\lib\chainsharp\chainsharp.lib.csproj" />
+    <ProjectReference Include="..\..\main\lib\datastructure\bplustree\chainsharp.datastructure.bplustree.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace main.lib.datastructure.bplustree
+namespace chainsharp.datastructure.bplustree
 {
     public class Class1
     {
