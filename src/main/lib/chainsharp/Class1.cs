@@ -2,7 +2,7 @@
 
 namespace main.lib.chainsharp
 {
-    public class Class1
+    public static class Class1
     {
         public static string dummy() 
         {

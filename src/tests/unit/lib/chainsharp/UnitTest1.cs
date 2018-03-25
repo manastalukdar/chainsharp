@@ -4,7 +4,7 @@ using Xunit;
 
 namespace tests.unit.lib.chainsharp
 {
-    public class UnitTest1
+    public static class UnitTest1
     {
         [Fact]
         public static void Test1()
