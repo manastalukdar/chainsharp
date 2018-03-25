@@ -288,5 +288,8 @@ __pycache__/
 *.xsd.cs
 
 
+# Custom stuff
+
 .vscode/solution-explorer
 tools
+!src/main/chainsharp.lib/
