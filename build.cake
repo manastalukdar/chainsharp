@@ -27,6 +27,8 @@ Task("Clean")
     {
         CleanDirectory(artifactsDirectory);
         CreateDirectory(codeCoverageDirectory);
+        var path = MakeAbsolute(new DirectoryPath("chainsharp.sln"));
+        DotNetCoreClean(path.FullPath);
     });
     
 
@@ -115,7 +117,7 @@ Task("Calculate-Coverage")
                     MergeOutput = true
                 }
                     .WithFilter("+[*]*")
-                    .WithFilter("-[unit*]*")
+                    .WithFilter("-[*tests*]*")
                     .ExcludeByAttribute("*.ExcludeFromCodeCoverage*")
             );
     }
