@@ -1,0 +1,18 @@
+name: build-test
+on: [push]
+jobs:
+  build-csharpcode:
+    name: csharpcode
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '6.0.100-preview.1.21103.13'
+      - run: dotnet --version
+      - name: Run build script
+        run: ./build.ps1
