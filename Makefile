@@ -1,5 +1,6 @@
 #*****************
 # OSFLAG
+# https://gist.github.com/sighingnow/deee806603ec9274fd47
 #*****************
 
 OSFLAG 				:=
@@ -52,7 +53,6 @@ generate-report:
 	reportgenerator "-reports:./src/tests/**/TestResults/**/coverage.cobertura.xml" "-targetdir:artifacts/coveragereport" "-reporttypes:Html"
 
 upload-to-codecov:
-# https://gist.github.com/sighingnow/deee806603ec9274fd47
 ifeq ($(UNAME_S),Linux)
 	bash < curl -s https://codecov.io/bash
 else
