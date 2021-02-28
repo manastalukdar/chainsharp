@@ -47,6 +47,16 @@ SHELL=/bin/bash
 osflag:
 	@echo $(OSFLAG)
 
+clean:
+	@echo -e "\n*********Cleaning*********\n"
+	@rm -rf "./src/tests/**/TestResults"
+# ifneq (,$(findstring WIN32,$(OSFLAG)))
+# 	@rm -r ".\src\tests\**\TestResults\"
+# else
+# 	@rm -rf "./src/tests/**/TestResults/"
+# endif
+#	@dotnet clean
+
 build:
 	@echo -e "\n*********Building*********\n"
 	@dotnet build
@@ -65,7 +75,8 @@ generate-report:
 
 upload-to-codecov:
 	@echo -e "\n*********Uploading to codecov*********\n"
-ifeq ($(UNAME_S),Linux)
+ifneq (,$(findstring LINUX,$(OSFLAG)))
+#ifeq ($(UNAME_S),Linux)
 	@bash <(curl -s https://codecov.io/bash)
 else
 	@echo "Not run on $(OSFLAG)."
@@ -78,4 +89,3 @@ endif
 build-test: build test
 
 ci: build test install-report-generator generate-report upload-to-codecov
-
