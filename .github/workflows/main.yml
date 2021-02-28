@@ -15,4 +15,5 @@ jobs:
           dotnet-version: '6.0.100-preview.1.21103.13'
       - run: dotnet --version
       - name: Run build script
+        shell: pwsh
         run: ./build.ps1
