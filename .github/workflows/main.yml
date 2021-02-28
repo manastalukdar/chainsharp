@@ -1,8 +1,8 @@
 name: build-test
 on: [push]
 jobs:
-  build-csharpcode:
-    name: csharpcode
+  build:
+    name: solution
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
