@@ -57,9 +57,9 @@ generate-report:
 	@reportgenerator "-reports:./src/tests/**/TestResults/**/coverage.cobertura.xml" "-targetdir:artifacts/coveragereport" "-reporttypes:Html"
 
 upload-to-codecov:
-@echo "*********Running upoad to codecov*********"
+@echo "*********Running upload to codecov*********"
 ifeq ($(UNAME_S),Linux)
-	@bash < 'curl -s https://codecov.io/bash'
+	@curl -s https://codecov.io/bash
 else
 	@echo "Not run on $(OSFLAG)."
 endif
