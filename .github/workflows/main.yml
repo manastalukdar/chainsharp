@@ -17,4 +17,8 @@ jobs:
       - name: build
         run: dotnet build
       - name: test
-        run: dotnet test
+        run: dotnet test --collect:"XPlat Code Coverage"
+      - name: install report-generator
+        run: dotnet tool install -g dotnet-reportgenerator-globaltool
+      - name: generate report
+        run: reportgenerator "-reports:.\src\tests\chainsharp.tests.unit\TestResults\**\coverage.cobertura.xml" "-targetdir:artifacts/coveragereport" "-reporttypes:Html"
