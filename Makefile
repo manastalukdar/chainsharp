@@ -18,6 +18,8 @@ upload-to-codecov:
 # https://gist.github.com/sighingnow/deee806603ec9274fd47
 ifeq ($(OS),Linux)
 	bash <(curl -s https://codecov.io/bash)
+else
+	echo "Not run on $(OS)."
 endif
 
 #*****************
