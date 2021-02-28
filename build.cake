@@ -69,7 +69,7 @@ Task("Run-Unit-Tests")
         var filePath = new FilePath(solutionPath.FullPath);
         DotNetCoreTest(project.ToString(), new DotNetCoreTestSettings
         {
-            Framework = "netcoreapp2.0",
+            Framework = "net6.0",
             NoBuild = true,
             NoRestore = true,
             WorkingDirectory = filePath.GetDirectory()
@@ -103,7 +103,7 @@ Task("Calculate-Coverage")
                      project.FullPath,
                      new DotNetCoreTestSettings() //{ Configuration = "Debug" }
                      {
-                        Framework = "netcoreapp2.0",
+                        Framework = "net6.0",
                         NoBuild = true,
                         NoRestore = true
                      }
