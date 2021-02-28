@@ -41,22 +41,27 @@ osflag:
 	@echo $(OSFLAG)
 
 build:
-	dotnet build
+	@echo "*********Building*********"
+	@dotnet build
 
 test:
-	dotnet test --collect:"XPlat Code Coverage"
+	@echo "*********Testing*********"
+	@dotnet test --collect:"XPlat Code Coverage"
 
 install-report-generator:
-	dotnet tool install -g dotnet-reportgenerator-globaltool
+	@echo "*********Installing report-generator*********"
+	@dotnet tool install -g dotnet-reportgenerator-globaltool
 
 generate-report:
-	reportgenerator "-reports:./src/tests/**/TestResults/**/coverage.cobertura.xml" "-targetdir:artifacts/coveragereport" "-reporttypes:Html"
+	@echo "*********Generating report*********"
+	@reportgenerator "-reports:./src/tests/**/TestResults/**/coverage.cobertura.xml" "-targetdir:artifacts/coveragereport" "-reporttypes:Html"
 
 upload-to-codecov:
+@echo "*********Running upoad to codecov*********"
 ifeq ($(UNAME_S),Linux)
-	bash < 'curl -s https://codecov.io/bash'
+	@bash < 'curl -s https://codecov.io/bash'
 else
-	@echo "Not run on $(OS)."
+	@echo "Not run on $(OSFLAG)."
 endif
 
 #*****************
