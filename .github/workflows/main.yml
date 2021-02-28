@@ -23,4 +23,11 @@ jobs:
       - name: generate report
         run: reportgenerator "-reports:./src/tests/**/TestResults/**/coverage.cobertura.xml" "-targetdir:artifacts/coveragereport" "-reporttypes:Html"\
       - name: Upload test coverage to codecov
-        run: bash <(curl -s https://codecov.io/bash)
+        run: |
+          if [ matrix.os == 'ubuntu-latest' ]; then
+            bash <(curl -s https://codecov.io/bash)
+          else
+            echo "Won't run on $RUNNER_OS"
+            exit
+          fi
+        shell: bash
