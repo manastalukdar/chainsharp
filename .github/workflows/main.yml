@@ -14,14 +14,16 @@ jobs:
         with:
           dotnet-version: '6.0.100-preview.1.21103.13'
       - run: dotnet --version
-      - name: Build
-        run: dotnet build
-      - name: Test
-        run: dotnet test --collect:"XPlat Code Coverage"
-      - name: Install report-generator
-        run: dotnet tool install -g dotnet-reportgenerator-globaltool
-      - name: Generate report
-        run: reportgenerator "-reports:./src/tests/**/TestResults/**/coverage.cobertura.xml" "-targetdir:artifacts/coveragereport" "-reporttypes:Html"\
-      - name: Upload test coverage to codecov
-        run: bash <(curl -s https://codecov.io/bash)
-        if: matrix.os == 'ubuntu-latest'
+      - name: Run Make CI
+        run: make ci
+      # - name: Build
+      #   run: dotnet build
+      # - name: Test
+      #   run: dotnet test --collect:"XPlat Code Coverage"
+      # - name: Install report-generator
+      #   run: dotnet tool install -g dotnet-reportgenerator-globaltool
+      # - name: Generate report
+      #   run: reportgenerator "-reports:./src/tests/**/TestResults/**/coverage.cobertura.xml" "-targetdir:artifacts/coveragereport" "-reporttypes:Html"\
+      # - name: Upload test coverage to codecov
+      #   run: bash <(curl -s https://codecov.io/bash)
+      #   if: matrix.os == 'ubuntu-latest'
