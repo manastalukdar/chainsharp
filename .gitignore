@@ -293,3 +293,6 @@ __pycache__/
 .vscode/solution-explorer
 tools
 !src/**/chainsharp.lib
+
+.metals
+null

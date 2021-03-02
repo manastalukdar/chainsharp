@@ -3,5 +3,9 @@
         "Xunit",
         "bplustree",
         "chainsharp"
-    ]
+    ],
+    "files.watcherExclude": {
+        "**/target": true
+    },
+    "c3.rootPackage": ""
 }
