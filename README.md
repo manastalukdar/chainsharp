@@ -21,7 +21,7 @@ Some text
 Few badges here: discord/gitter/spectrum server, build status (circleci/travis/github-workflow; ghworkflow preferable), code coverage.
 
 [![build-test](https://github.com/manastalukdar/chainsharp/actions/workflows/main.yml/badge.svg)](https://github.com/manastalukdar/chainsharp/actions/workflows/main.yml)
-[![GitHub Super-Linter](https://github.com/manastalukdar/chainsharp/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/manastalukdar/chainsharp/actions)
+[![Lint Code Base](https://github.com/manastalukdar/chainsharp/actions/workflows/linter.yml/badge.svg)](https://github.com/manastalukdar/chainsharp/actions/workflows/linter.yml)
 
 [More project metadata badges [here](./documentation/project/metadata.md). More CI/CD badges [here](./documentation/development/ci-cd.md#current-status).]
 
