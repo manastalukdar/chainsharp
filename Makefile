@@ -80,6 +80,8 @@ endif
 # All tasks
 #*****************
 
+build-test: build test
+
 clean-build-test: clean build test
 
 ci: clean build test install-report-generator generate-report upload-to-codecov
